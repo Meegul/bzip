@@ -19,6 +19,13 @@ int main(int argc, char **args) {
 				info = 1;
 			} else if (strcmp(args[i], "--decompress") == 0) {
 				compressInput = 0;
+			} else if (strcmp(args[i], "--help") == 0) {
+				printf("Usage:\n");
+				printf("Compress:\n`bzip [string to compress]` OR\n`... | bzip`\n");
+				printf("Decompress:\n`bzip --decompress [string to decompress]` OR \n`... | bzip --decompress`\n");
+				printf("--info can be used to print additional information about [de]compression\n");
+				printf("--help will print this dialogue\n");
+				return 0;			
 			} else {
 				//If an argument didn't match a flag, treat it as input
 				input = strdup(args[i]);
